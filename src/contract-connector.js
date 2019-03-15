@@ -151,7 +151,7 @@ console.log(theContract);
 
 // Initiate contract for a specific address
 const contractInstance = theContract.at(contract_address);
-console.log(contractInstance);
+console.log(contractInstance.options);
 
 
 
@@ -164,8 +164,8 @@ function playGame() {
     console.log(player1move);
     console.log(player2move);
 
-    contractInstance.playGame2(player1move, player2move, {value: 200, gas: 2000}, function(result) {
-        if (result) console.log(result)
+    contractInstance.playGame2.call(player1move, player2move, function(error, result) {
+        console.log(result);
     });  
 }
 
