@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Rock Paper Scissor on Solidity</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script> -->
+    <script src="web3.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Ethereum Infos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-right" href="#"><u>Protocol version:</u> <span id="eth-protocol-version"></span></a>
+                                <a class="dropdown-item text-right" href="#"><u>Network:</u> <span id="network-name"></span></a>
+                                <a class="dropdown-item text-right" href="#"><u>Block Number:</u> <span id="block-number"></span></a>
+                                <a class="dropdown-item text-right" href="#"><u>Total nb of transactions: </u> <span id="tx-count"></span></a>
+                                <a class="dropdown-item text-right" href="#"><u>Gas price: </u> <span id="gas-price"></span></a>
+                            </div>
+                        </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Web3 v<span id="web3Version" class="text-success"></span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><span id="nodeName"></span><span id="nodeVersion" class="text-danger"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="input-group-append ">
+                <input id="eth-address" type="text" class="form-control" aria-label="Text input with segmented dropdown button" readonly>
+                <button type="button" class="btn btn-outline-secondary" onClick="copyToClipboard()">Copy</button> 
+            </div>
+        </nav>
+    <div class="container-fluid main-container"> 
+    
+        <div class="header-game">
+            <div class="row justify-content-center ">
+                <div class="col-lg-8 t-center">
+                    <h1>Rock Paper Scissor on Ethereum</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 input-group justify-content-center">
+                    <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Rock</a>
+                    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Paper</a>
+                    <a href="#" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Scissors</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        
+    <div class="container">
+
+        <div class="row mt-3">
+            <div class="col-4 t-center">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="avatar.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">User 1</h5>
+                        <p class="card-text">User played...</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 t-center">
+                <h4 id="web3-box"></h4>
+                <p id="address-box"></p>
+                <div>
+                    <label>Player 1 move</label>
+                    <input type="number" id="player1">
+                </div>
+                
+                <div>
+                    <label>Player 2 does</label>
+                    <input type="number" id="player2">
+                </div>
+                
+                <div>
+                    <button onclick="playGame()">Play</button>
+                </div>
+                
+            </div>
+            <div class="col-4 t-center">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="avatar.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">User 2</h5>
+                        <p class="card-text">User played...</p>
+                        
+                    </div>
+                </div>  
+            </div>
+        </div>
+        
+    </div>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="contract-connector.js"></script>
+</body>
+    
+</html>
